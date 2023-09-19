@@ -1,0 +1,52 @@
+<app-prime-table *ngIf="(tickets$ | async) as tickets" [data]="tickets" [columns]="cols"
+    [customBodyTemplate]="customBodyTemplate" [customCaptionTemplate]="customCaptionTemplate">
+</app-prime-table>
+
+<ng-template #customCaptionTemplate>
+    <div class="flex custom-caption">
+        <div *ngIf="(tickets$ | async) as tickets" class="tickets">
+            {{tickets ? tickets.length : 0}} TICKETS
+        </div>
+        <div class="flex align-items-center gap-3 ml-auto header-right checkboxes">
+            <div class="flex align-items-center gap-1 checkbox-group">
+                <p-checkbox name="group1" [value]="true" class="status1"></p-checkbox>
+                <label for="" class="status_label">OFF LOCATION ({{ getCountByStatus('off location') | async}})</label>
+            </div>
+            <div class="flex align-items-center gap-1 checkbox-group">
+                <p-checkbox name="group1" [value]="true" class="status2"></p-checkbox>
+                <label for="" class="status_label">STANDBY ({{ getCountByStatus('standby') | async }})</label>
+            </div>
+            <div class="flex align-items-center gap-1 checkbox-group">
+                <p-checkbox name="group1" [value]="true" class="status3"></p-checkbox>
+                <label for="" class="status_label">RIGGED IN ({{ getCountByStatus('rigged in') | async}})</label>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #customBodyTemplate let-rowData let-ticket>
+    <tr>
+        <td *ngFor="let col of cols">
+            <ng-container *ngIf="col.field !== 'status'; else statusCell">
+                <ng-container *ngIf="col.field !== 'delivered' && col.field !== 'returned'; else formatDate">
+                    {{ rowData[col.field] }}
+                </ng-container>
+                <ng-container *ngIf="col.field == 'action'">
+                    <p-button (click)="showDialog(ticket)" icon="pi pi-pencil"
+                        styleClass="p-button-rounded p-button-text p-button-sm"></p-button>
+                </ng-container>
+                <ng-template #formatDate>
+                    {{ rowData[col.field] | date:'MM/dd/yy' }}
+                </ng-template>
+            </ng-container>
+            <ng-template #statusCell>
+                <div [ngClass]="{
+                    'status-off': ticket.status === 'off location',
+                    'status-standby': ticket.status === 'standby',
+                    'status-rigged': ticket.status === 'rigged in'}" class="status">
+                </div>
+            </ng-template>
+        </td>
+    </tr>
+</ng-template>
+<app-update *ngIf="selectedTicket" [selectedTicket]="selectedTicket"></app-update>

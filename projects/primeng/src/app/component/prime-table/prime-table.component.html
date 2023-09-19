@@ -1,0 +1,25 @@
+<p-table [columns]="columns" [value]="data" responsiveLayout="scroll" [scrollable]="true" scrollHeight="90vh">
+    <ng-template pTemplate="caption">
+        <ng-container *ngTemplateOutlet="customCaptionTemplate"></ng-container>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <ng-template #defaultTemplate>
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="customBodyTemplate ? customBodyTemplate : defaultTemplate; context: {$implicit: rowData}">
+        </ng-container>
+    </ng-template>
+</p-table>

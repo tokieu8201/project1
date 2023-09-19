@@ -1,0 +1,20 @@
+*{margin: 0;padding: 0;}
+
+nav{
+    padding-left: 10%;
+    padding-right: 20px;
+    height: 60px;
+}
+.home{
+    padding: 20px 7%;
+}
+
+.logout{
+    justify-content: end;
+}
+.popular{
+    background-color: #ece5e5;
+    height: 300px;
+    padding: 0px 30px;
+    border-radius: 5px;
+}

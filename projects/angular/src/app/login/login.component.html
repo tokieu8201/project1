@@ -1,0 +1,37 @@
+<div *ngIf="!isLoggedIn" class="d-flex justify-content-center login-container">
+    <div class="card card-info col-sm-4 login-card">
+        <form [formGroup]="loginForm">
+            <div class="d-flex align-item-center justify-content-center">
+                <i class='bx bxs-user-circle'></i>
+            </div>
+            <h2 class="d-flex align-item-center justify-content-center title">Login</h2>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="email">Email address<span class="login">*</span></label>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email" formControlName="email">
+                    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+                        Email is invalid
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password<span class="login">*</span></label>
+                    <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password">
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                        Password is invalid
+                    </div>
+                </div>
+                <div *ngIf="loginError" class="text-danger pb-3">
+                    {{ loginError }}
+                </div>
+                <button (click)="login()" type="submit" class="btn btn-success col-sm-12">Sign in</button>
+                <p class="d-flex justify-content-center pt-3">
+                    <span style="font-size: 14px; padding-right: 3px;">Dont't have a account?</span> 
+                    <a href="" class="register">Sign up here</a>
+                    <!-- [routerLink]="['/register']" -->
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+

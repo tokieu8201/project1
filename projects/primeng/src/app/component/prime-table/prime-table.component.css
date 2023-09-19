@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+::ng-deep .p-datatable{
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 14px !important;
+}
+
+::ng-deep .p-datatable-header {
+    background-color: hsl(211.58deg 32.2% 11.57%) !important;
+    color: white !important;
+    border-bottom: none !important;
+    box-shadow: 0px 3px 4px white !important;
+    border: none !important;
+    /* color: #bfbfbf !important; */
+}
+
+::ng-deep .p-datatable .p-datatable-wrapper{
+    background-color: hsl(211.58deg 32.2% 11.57%) !important;
+    padding: 0px 15px;
+}
+
+::ng-deep .p-datatable .p-datatable-wrapper .p-datatable-table{
+    width: fit-content !important;
+}
+
+::ng-deep .p-datatable .p-datatable-thead tr th {
+    background-color: hsl(211.58deg 32.2% 11.57%) !important;
+    color: rgb(159, 157, 157) !important;
+    text-transform: uppercase;
+    /* font-weight: normal !important; */
+    border-bottom: 1px solid rgb(70, 67, 67) !important;
+    vertical-align: top;
+    padding: 16px 10px;
+    font-size: 12px;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody tr td {
+    background-color: hsl(211.58deg 32.2% 11.57%);
+    color: white;
+    border-bottom: 1px solid rgb(70, 67, 67) !important;
+    padding: 0px 10px;
+    white-space: nowrap;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody tr td:last-child{
+    width: 100%;
+}
+
+::ng-deep .p-datatable .p-datatable-wrapper::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background-color: hsl(211.43deg 24.71% 16.67%);
+    border-radius: 15px;
+}
+
+/* ::ng-deep .p-datatable .p-datatable-wrapper::-webkit-scrollbar-track{
+    background-color: wheat;
+} */
+
+::ng-deep .p-datatable .p-datatable-wrapper::-webkit-scrollbar-thumb{
+    background-color: hsl(212.5deg 24% 19.61%);
+    border-radius: 15px;
+}
+
+::ng-deep .p-datatable .p-datatable-wrapper::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(81, 80, 80);
+    border-radius: 15px;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box {
+    border: none;
+    width: 15px;
+    height: 15px;
+    color: #495057;
+    border-radius: 3px;
+    margin-top: 3px;
+}

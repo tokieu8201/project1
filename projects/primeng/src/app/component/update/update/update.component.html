@@ -1,0 +1,59 @@
+<p-toast></p-toast>
+<p-dialog [(visible)]="visible" *ngIf="selectedTicket" header="Edit" appendTo="body" [style]="{width: '60vw'}" [contentStyle]="{height: '60vh'}">
+    <div class="edit" >
+        <div class="flex flex-column gap-2">
+            <label htmlFor="status" class="mt-1">Status</label>
+            <!-- <input pInputText id="status" aria-describedby="username-help" class="p-inputtext-sm" [(ngModel)]="selectedTicket.status"/> -->
+            <p-dropdown [options]="listStatus" [(ngModel)]="selectedTicket.status" [filter]="true" optionLabel="label" optionValue="value" [style]="{ 'width': '100%' }"></p-dropdown>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="delivered" class="mt-2">Delivered</label>
+            <p-calendar class="date" [(ngModel)]="selectedTicket.delivered" [showIcon]="true" class="p-calendar-sm" [style]="{ 'width': '100%' }"></p-calendar>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="returned" class="mt-2">Returned</label>
+            <p-calendar [(ngModel)]="selectedTicket.delivered" [showIcon]="true" [style]="{ 'width': '100%' }"></p-calendar>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="chemical" class="mt-2">Chemical</label>
+            <input pInputText id="chemical" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.chemical" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="supplier" class="mt-2">Supplier</label>
+            <input pInputText id="supplier" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.supplier" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="delivered_qty" class="mt-2">Delivered Qty</label>
+            <input pInputText id="delivered_qty" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.delivered_qty" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="current_qty" class="mt-2">Current Qty</label>
+            <input pInputText id="current_qty" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.current_qty" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="returned_qty" class="mt-2">Returned Qty</label>
+            <input pInputText id="returned_qty" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.returned_qty" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="net" class="mt-2">Net</label>
+            <input pInputText id="net" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.net" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="bol" class="mt-2">Bol</label>
+            <input pInputText id="bol" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.bol" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="equipment" class="mt-2">Equipment</label>
+            <input pInputText id="equipment" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.equipment" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="type" class="mt-2">Delivery type</label>
+            <input pInputText id="type" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.delivery_type" [style]="{ 'width': '100%' }"/>
+        </div>
+        <div class="flex flex-column gap-2">
+            <label htmlFor="pad" class="mt-2">Pad</label>
+            <input pInputText id="pad" aria-describedby="" class="p-inputtext-sm" [(ngModel)]="selectedTicket.pad" [style]="{ 'width': '100%' }"/>
+        </div>
+        <p-button (click)="updateTicket()" label="Save" icon="pi pi-check" styleClass="p-button-sm mt-2 ml-auto"></p-button>
+    </div>
+</p-dialog>

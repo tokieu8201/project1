@@ -1,0 +1,58 @@
+/* --------------------------------------------------------------------------- */
+.status-off{
+    background-color: blueviolet;
+}
+
+.status-standby{
+    background-color: #3333ff;
+}
+
+.status-rigged{
+    background-color: green;
+}
+
+.status{
+    width: 10px;
+    height: 10px;
+    margin: auto;
+}
+.custom-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tickets {
+    flex: 1;
+}
+
+.checkboxes {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+
+::ng-deep .status1 .p-checkbox .p-checkbox-box{
+    background: blueviolet;
+}
+
+::ng-deep .status2 .p-checkbox .p-checkbox-box{
+    background: #3333ff;
+}
+
+::ng-deep .status3 .p-checkbox .p-checkbox-box{
+    background: green;
+}
+
+.status_label{
+    color: white;
+    font-weight: normal;
+    padding-top: 2px;
+}
+/* ----------------------------------------------------------------------------- */
